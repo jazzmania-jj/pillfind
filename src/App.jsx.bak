@@ -21,39 +21,13 @@ async function fetchIngredients(searchQuery = "") {
 }
 
 async function fetchIngredientByName(name) {
-  // 1차: Supabase DB 조회
   const url = `${SUPABASE_URL}/rest/v1/ingredients?select=*&name=ilike.*${encodeURIComponent(name)}*&limit=1`;
   const response = await fetch(url, {
     headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
   });
-  if (response.ok) {
-    const data = await response.json();
-    if (data[0]) return data[0];
-  }
-
-  // 2차: 식약처 공공데이터 API 조회
-  try {
-    const apiRes = await fetch(`/api/ingredient?name=${encodeURIComponent(name)}`);
-    if (apiRes.ok) {
-      const apiData = await apiRes.json();
-      if (apiData.rows && apiData.rows.length > 0) {
-        const row = apiData.rows[0];
-        return {
-          name: row.HELT_ITM_GRP_NM,
-          category: row.MLSFC_NM || row.SCLAS_NM,
-          function: row.MLSFC_NM + " (" + row.SCLAS_NM + ")",
-          daily_intake: null,
-          kfda_approved: true,
-          safety_grade: "safe",
-          source: "MFDS"
-        };
-      }
-    }
-  } catch (e) {
-    console.warn("식약처 API 조회 실패:", e);
-  }
-
-  return null;
+  if (!response.ok) return null;
+  const data = await response.json();
+  return data[0] || null;
 }
 
 async function analyzeWithAI(ingredient, question) {
