@@ -3,6 +3,11 @@ import { useState, useEffect, useRef } from "react";
 const SUPABASE_URL = "https://ymwchktzyovgffpdxvfy.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inltd2Noa3R6eW92Z2ZmcGR4dmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4OTc5MzEsImV4cCI6MjA4ODQ3MzkzMX0.aooUSjOcif0bhxcW41Rb7e6AjkUkU4LL7UrjnbDvm-0";
 
+// ============================================================
+// ✅ Anthropic API 키 입력 (https://console.anthropic.com)
+const ANTHROPIC_API_KEY = "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";
+// ============================================================
+
 async function fetchIngredients(searchQuery = "") {
   let url = `${SUPABASE_URL}/rest/v1/ingredients?select=*&order=name`;
   if (searchQuery) {
@@ -28,7 +33,12 @@ async function fetchIngredientByName(name) {
 async function analyzeWithAI(ingredient, question) {
   const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true",
+    },
     body: JSON.stringify({
       model: "claude-sonnet-4-20250514",
       max_tokens: 1000,
@@ -49,7 +59,12 @@ async function analyzeWithAI(ingredient, question) {
 async function extractIngredientsFromImage(base64Image, mimeType) {
   const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true",
+    },
     body: JSON.stringify({
       model: "claude-sonnet-4-20250514",
       max_tokens: 1000,
@@ -547,6 +562,19 @@ export default function SupplementAnalyzer() {
                 <button onClick={resetScan}
                   style={{ width: "100%", marginTop: 20, padding: 14, borderRadius: 12, border: "2px solid #e2e8f0", background: "#fff", color: "#64748b", fontSize: 14, fontWeight: 600, cursor: "pointer" }}>
                   🔄 다른 제품 분석하기
+                </button>
+              </div>
+            )}
+
+            {/* 에러 */}
+            {scanStep === "error" && (
+              <div style={{ textAlign: "center", padding: 48, background: "#fef2f2", borderRadius: 16 }}>
+                <div style={{ fontSize: 40, marginBottom: 12 }}>❌</div>
+                <div style={{ fontSize: 16, fontWeight: 600, color: "#ef4444" }}>분석 중 오류가 발생했어요</div>
+                <div style={{ fontSize: 13, color: "#94a3b8", marginTop: 8 }}>API 키를 확인하거나 다시 시도해주세요</div>
+                <button onClick={resetScan}
+                  style={{ marginTop: 16, padding: "10px 24px", borderRadius: 10, border: "none", background: "#10b981", color: "#fff", fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
+                  다시 시도
                 </button>
               </div>
             )}
