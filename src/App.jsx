@@ -41,8 +41,9 @@ async function fetchIngredientByName(name) {
         return {
           name: row.HELT_ITM_GRP_NM,
           category: row.MLSFC_NM || row.SCLAS_NM,
-          function: row.MLSFC_NM + " (" + row.SCLAS_NM + ")",
-          daily_intake: null,
+          function: row.FNCLTY_CN || (row.MLSFC_NM + " (" + row.SCLAS_NM + ")"),
+          daily_intake: row.DAY_INTK_CN || null,
+          safety_note: row.IFTKN_ATNT_MATR_CN || null,
           kfda_approved: true,
           safety_grade: "safe",
           source: "MFDS"
