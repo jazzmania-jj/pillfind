@@ -199,6 +199,10 @@ export default function SupplementAnalyzer() {
   function handleImageUpload(e) {
     const file = e.target.files[0];
     if (!file) return;
+    loadImageFile(file);
+  }
+
+  function loadImageFile(file) {
     const reader = new FileReader();
     reader.onload = (ev) => {
       setScanImage({ dataUrl: ev.target.result, file });
@@ -207,6 +211,19 @@ export default function SupplementAnalyzer() {
       setExtractedNames([]);
     };
     reader.readAsDataURL(file);
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const file = e.dataTransfer.files[0];
+    if (!file || !file.type.startsWith("image/")) return;
+    loadImageFile(file);
+  }
+
+  function handleDragOver(e) {
+    e.preventDefault();
+    e.stopPropagation();
   }
 
   // 성분 분석 시작
@@ -461,7 +478,9 @@ export default function SupplementAnalyzer() {
                   <label htmlFor="scan-input" style={{ display: "block", cursor: "pointer" }}>
                     <div style={{ border: "2px dashed #10b981", borderRadius: 20, padding: 60, textAlign: "center", background: "#f0fdf4", transition: "all 0.2s" }}
                       onMouseEnter={(e) => e.currentTarget.style.background = "#dcfce7"}
-                      onMouseLeave={(e) => e.currentTarget.style.background = "#f0fdf4"}>
+                      onMouseLeave={(e) => e.currentTarget.style.background = "#f0fdf4"}
+                      onDrop={handleDrop}
+                      onDragOver={handleDragOver}>
                       <div style={{ fontSize: 56, marginBottom: 16 }}>📷</div>
                       <div style={{ fontSize: 18, fontWeight: 800, color: "#064e3b", marginBottom: 8 }}>사진 업로드</div>
                       <div style={{ fontSize: 14, color: "#059669", marginBottom: 16 }}>클릭하거나 사진을 드래그하세요</div>
