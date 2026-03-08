@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // ✅ 여기에 Supabase 정보를 입력하세요
 // Settings > API Keys 에서 확인
 const SUPABASE_URL = "https://ymwchktzyovgffpdxvfy.supabase.co";
-const SUPABASE_KEY = "sb_publishable_XbGKYdXTFFgcDdrs03ToHQ_C3BcCcic";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inltd2Noa3R6eW92Z2ZmcGR4dmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4OTc5MzEsImV4cCI6MjA4ODQ3MzkzMX0.aooUSjOcif0bhxcW41Rb7e6AjkUkU4LL7UrjnbDvm-0";
 // ============================================================
 
 // Supabase에서 데이터 가져오는 함수
