@@ -63,7 +63,7 @@ const SAFETY_CONFIG = {
 
 export default function SupplementAnalyzer() {
   const [ingredients, setIngredients] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selected, setSelected] = useState(null);
@@ -280,7 +280,7 @@ export default function SupplementAnalyzer() {
                 )}
 
                 {/* 로딩 */}
-                {loading && (
+                {loading && searchQuery.trim() && (
                   <div style={{ textAlign: "center", padding: 48, color: "#94a3b8" }}>
                     <div style={{ fontSize: 32, marginBottom: 12 }}>⏳</div>
                     <div style={{ fontSize: 15, fontWeight: 600 }}>Supabase에서 데이터 불러오는 중...</div>
