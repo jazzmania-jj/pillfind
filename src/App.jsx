@@ -75,11 +75,9 @@ export default function SupplementAnalyzer() {
 
   // 컴포넌트 시작 시 Supabase에서 데이터 불러오기
   useEffect(() => {
-    loadIngredients();
-  }, []);
-
   // 검색어 변경 시 자동 검색
   useEffect(() => {
+    if (!searchQuery.trim()) { setIngredients([]); return; }
     const timer = setTimeout(() => {
       loadIngredients(searchQuery);
     }, 300); // 0.3초 딜레이 (타이핑 중 과도한 요청 방지)
