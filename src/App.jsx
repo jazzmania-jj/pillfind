@@ -31,7 +31,7 @@ async function fetchIngredientByName(name) {
 }
 
 async function analyzeWithAI(ingredient, question) {
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
+  const response = await fetch("/api/analyze", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -57,7 +57,7 @@ async function analyzeWithAI(ingredient, question) {
 
 // 이미지에서 성분 추출
 async function extractIngredientsFromImage(base64Image, mimeType) {
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
+  const response = await fetch("/api/analyze", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
