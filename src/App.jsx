@@ -5,7 +5,7 @@ const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 // ============================================================
 // ✅ Anthropic API 키 입력 (https://console.anthropic.com)
-const ANTHROPIC_API_KEY = "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";
+const ANTHROPIC_API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY;
 // ============================================================
 
 async function fetchIngredients(searchQuery = "") {
