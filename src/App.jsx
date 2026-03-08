@@ -37,7 +37,7 @@ async function analyzeWithAI(ingredient, question) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-5",
+      model: "claude-sonnet-4-6",
       max_tokens: 1000,
       system: `당신은 '김약사'입니다. 약학 전문 지식을 바탕으로 소비자들이 영양제 성분을 이해할 수 있도록 돕는 약사입니다.
 - 전문적이지만 쉽고 친근하게 설명
@@ -60,7 +60,7 @@ async function extractIngredientsFromImage(base64Image, mimeType) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-5",
+      model: "claude-sonnet-4-6",
       max_tokens: 1000,
       messages: [{
         role: "user",
