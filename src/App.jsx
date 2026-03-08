@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // ✅ 여기에 Supabase 정보를 입력하세요
 // Settings > API Keys 에서 확인
 const SUPABASE_URL = "https://ymwchktzyovgffpdxvfy.supabase.co";
-const SUPABASE_KEY = "sb_publishable_XbGKYdXTFFgcDdrsO3ToHQ_C3BcCcic";
+const SUPABASE_KEY = "sb_publishable_XbGKYdXTFFgcDdrs03ToHQ_C3BcCcic";
 // ============================================================
 
 // Supabase에서 데이터 가져오는 함수
@@ -141,8 +141,8 @@ export default function SupplementAnalyzer() {
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <div style={{ width: 36, height: 36, background: "linear-gradient(135deg, #10b981, #059669)", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>💊</div>
             <div>
-              <div style={{ fontSize: 17, fontWeight: 800, color: "#0f172a" }}>필파인드</div>
-              <div style={{ fontSize: 10, color: "#64748b" }}>영양제 성분 분석 서비스</div>
+              <div style={{ fontSize: 17, fontWeight: 800, color: "#0f172a" }}>영리하다</div>
+              <div style={{ fontSize: 10, color: "#64748b" }}>영양제 리뷰를 하다, 영리하다</div>
             </div>
           </div>
           <div style={{ display: "flex", gap: 6 }}>
