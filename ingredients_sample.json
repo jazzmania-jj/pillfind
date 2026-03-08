@@ -1,0 +1,57 @@
+[
+  {
+    "name": "비타민D (콜레칼시페롤)",
+    "english_name": "Vitamin D3 (Cholecalciferol)",
+    "category": "비타민",
+    "function": "칼슘과 인이 흡수되고 이용되는 데 필요. 뼈의 형성과 유지에 필요. 골다공증 발생 위험 감소에 도움.",
+    "daily_intake": "100μg",
+    "safety_grade": "safe",
+    "kfda_approved": true,
+    "source_type": "고시형",
+    "updated_at": "2026-03-08T10:36:07.355253"
+  },
+  {
+    "name": "오메가-3 지방산",
+    "english_name": "Omega-3 Fatty Acids (EPA+DHA)",
+    "category": "지방산",
+    "function": "혈중 중성지질 개선에 도움. 혈행 개선에 도움.",
+    "daily_intake": "EPA+DHA 합계 2g",
+    "safety_grade": "safe",
+    "kfda_approved": true,
+    "source_type": "고시형",
+    "updated_at": "2026-03-08T10:36:07.355260"
+  },
+  {
+    "name": "마그네슘",
+    "english_name": "Magnesium",
+    "category": "미네랄",
+    "function": "에너지 이용에 필요. 신경과 근육 기능 유지에 필요.",
+    "daily_intake": "350mg",
+    "safety_grade": "safe",
+    "kfda_approved": true,
+    "source_type": "고시형",
+    "updated_at": "2026-03-08T10:36:07.355261"
+  },
+  {
+    "name": "루테인",
+    "english_name": "Lutein",
+    "category": "카로티노이드",
+    "function": "노화로 인해 감소될 수 있는 황반색소 밀도를 유지하여 눈 건강에 도움.",
+    "daily_intake": "20mg",
+    "safety_grade": "safe",
+    "kfda_approved": true,
+    "source_type": "고시형",
+    "updated_at": "2026-03-08T10:36:07.355262"
+  },
+  {
+    "name": "아연",
+    "english_name": "Zinc",
+    "category": "미네랄",
+    "function": "정상적인 면역기능에 필요. 정상적인 세포분열에 필요.",
+    "daily_intake": "35mg",
+    "safety_grade": "caution",
+    "kfda_approved": true,
+    "source_type": "고시형",
+    "updated_at": "2026-03-08T10:36:07.355263"
+  }
+]
