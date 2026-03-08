@@ -8,7 +8,7 @@
     "safety_grade": "safe",
     "kfda_approved": true,
     "source_type": "고시형",
-    "updated_at": "2026-03-08T10:36:07.355253"
+    "updated_at": "2026-03-08T13:44:22.525021"
   },
   {
     "name": "오메가-3 지방산",
@@ -19,7 +19,7 @@
     "safety_grade": "safe",
     "kfda_approved": true,
     "source_type": "고시형",
-    "updated_at": "2026-03-08T10:36:07.355260"
+    "updated_at": "2026-03-08T13:44:22.525030"
   },
   {
     "name": "마그네슘",
@@ -30,7 +30,7 @@
     "safety_grade": "safe",
     "kfda_approved": true,
     "source_type": "고시형",
-    "updated_at": "2026-03-08T10:36:07.355261"
+    "updated_at": "2026-03-08T13:44:22.525031"
   },
   {
     "name": "루테인",
@@ -41,7 +41,7 @@
     "safety_grade": "safe",
     "kfda_approved": true,
     "source_type": "고시형",
-    "updated_at": "2026-03-08T10:36:07.355262"
+    "updated_at": "2026-03-08T13:44:22.525032"
   },
   {
     "name": "아연",
@@ -52,6 +52,6 @@
     "safety_grade": "caution",
     "kfda_approved": true,
     "source_type": "고시형",
-    "updated_at": "2026-03-08T10:36:07.355263"
+    "updated_at": "2026-03-08T13:44:22.525033"
   }
 ]

@@ -20,7 +20,7 @@ from datetime import datetime
 
 # ============================================================
 # ✅ 여기에 발급받은 인증키를 입력하세요
-API_KEY = "YOUR_API_KEY_HERE"
+API_KEY = "cf50cb4181db460e9701"
 # ============================================================
 
 BASE_URL = "http://openapi.foodsafetykorea.go.kr/api"
@@ -181,7 +181,7 @@ def main():
     print("🌿 필파인드 - 식약처 데이터 수집 시작")
     print("=" * 50)
     
-    if API_KEY == "YOUR_API_KEY_HERE":
+    if API_KEY == "cf50cb4181db460e9701":
         print("\n⚠️  API_KEY를 먼저 설정하세요!")
         print("   1. https://www.data.go.kr 접속")
         print("   2. '건강기능식품 기능성 원료' 검색")
