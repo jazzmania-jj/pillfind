@@ -73,8 +73,6 @@ export default function SupplementAnalyzer() {
   const [compareList, setCompareList] = useState([]);
   const [activeTab, setActiveTab] = useState("search");
 
-  // 컴포넌트 시작 시 Supabase에서 데이터 불러오기
-  useEffect(() => {
   // 검색어 변경 시 자동 검색
   useEffect(() => {
     if (!searchQuery.trim()) { setIngredients([]); return; }
