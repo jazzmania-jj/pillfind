@@ -301,7 +301,7 @@ export default function SupplementAnalyzer() {
                 )}
 
                 {/* 결과 없음 */}
-                {!loading && !error && ingredients.length === 0 && (
+                {!loading && !error && ingredients.length === 0 && searchQuery.trim() && (
                   <div style={{ textAlign: "center", padding: 48, color: "#94a3b8" }}>
                     <div style={{ fontSize: 40, marginBottom: 12 }}>🔍</div>
                     <div style={{ fontSize: 16, fontWeight: 600 }}>검색 결과가 없습니다</div>
